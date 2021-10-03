@@ -1,4 +1,16 @@
 ## List of steps of a basic chaincode lifecycle on Hyperledger Fabric
+### Pre-requisites
+- Install Docker Compose: `sudo apt install -y docker-compose` (Make sure that the docker-compose version is 1.14.0)
+- Install Golang version >= 1.15.x 
+- Install build essential `sudo apt install -y build-essential`
+
+### Download Fabric and Fabric-samples
+- `mkdir -p $HOME/go/src/github.com/hyperledger`
+- `cd $HOME/go/src/github.com/hyperledger`
+- `curl -sSL http://bit.ly/2ysbOFE | bash -s -- 2.2.2 1.4.9` (do not change these versions)
+- `cd fabric-samples && git checkout v2.2.2`
+- `cd .. && git clone https://github.com/hyperledger/fabric && cd fabric && git checkout release-2.2`
+
 ### Environment preparation
 Open two terminals on `/test-network` directory and run the following scripts to add all the env variables to setup the Organizations and the paths to the Fabric /config and /bin:
 - from a terminal run `./network.sh up createChannel -ca -s couchdb`
